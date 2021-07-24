@@ -12,15 +12,15 @@ class RubyTextData {
     this.onPanUpdate,
     this.onTapCancel,
   });
-  final String? text;
-  final String? ruby;
-  final TextStyle? style;
-  final TextStyle? rubyStyle;
-  final GestureTapDownCallback? onTapDown;
-  final GestureTapUpCallback? onTapUp;
-  final GestureTapCallback? onTap;
-  final GestureDragUpdateCallback? onPanUpdate;
-  final GestureTapCancelCallback? onTapCancel;
+  String? text;
+  String? ruby;
+  TextStyle? style;
+  TextStyle? rubyStyle;
+  GestureTapDownCallback? onTapDown;
+  GestureTapUpCallback? onTapUp;
+  GestureTapCallback? onTap;
+  GestureDragUpdateCallback? onPanUpdate;
+  GestureTapCancelCallback? onTapCancel;
 
   int getLength() {
     return text!.length;
