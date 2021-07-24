@@ -12,8 +12,8 @@ class RubyTextData {
     this.onPanUpdate,
     this.onTapCancel,
   });
-  String? text;
-  String? ruby;
+  String? text = '';
+  String? ruby = '';
   TextStyle? style;
   TextStyle? rubyStyle;
   GestureTapDownCallback? onTapDown;
