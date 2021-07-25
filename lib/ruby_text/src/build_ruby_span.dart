@@ -15,7 +15,7 @@ WidgetSpan buildRubySpan(
 }) {
   final defaultTextStyle = DefaultTextStyle.of(context);
   var effectiveTextStyle = style;
-  if (style == null) {
+  if (style == null || style.fontSize == null) {
     effectiveTextStyle = defaultTextStyle.style.merge(style);
   }
   if (MediaQuery.boldTextOverride(context)) {
@@ -60,7 +60,6 @@ WidgetSpan buildRubySpan(
           effectiveTextStyle.merge(TextStyle(letterSpacing: newLetterSpacing));
     }
   }
-  // effectiveTextStyle = effectiveTextStyle.merge(TextStyle(fontSize: 18));
   final texts = <Widget>[];
   if (ruby != null) {
     texts.add(
