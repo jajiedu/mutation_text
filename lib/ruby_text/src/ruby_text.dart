@@ -74,6 +74,7 @@ class RubyText extends StatelessWidget {
                 data.text,
                 ruby: data.ruby,
                 context: context,
+                isUnderlined: data.isUnderlined,
                 // style: data.style,
                 // rubyStyle: data.rubyStyle,
                 // onTapDown: data.onTapDown,
