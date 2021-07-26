@@ -61,7 +61,7 @@ WidgetSpan buildRubySpan(
           effectiveTextStyle.merge(TextStyle(letterSpacing: newLetterSpacing));
     }
   }
-  if (isUnderlined!) {
+  if (isUnderlined != null && isUnderlined) {
     effectiveTextStyle = effectiveTextStyle
         .merge(TextStyle(decoration: TextDecoration.underline));
   }
