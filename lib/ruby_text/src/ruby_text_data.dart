@@ -4,23 +4,24 @@ class RubyTextData {
   RubyTextData(
     this.text, {
     this.ruby,
-    this.style,
-    this.rubyStyle,
-    this.onTapDown,
-    this.onTapUp,
-    this.onTap,
-    this.onPanUpdate,
-    this.onTapCancel,
+    // this.style,
+    // this.rubyStyle,
+    // this.onTapDown,
+    // this.onTapUp,
+    // this.onTap,
+    // this.onPanUpdate,
+    // this.onTapCancel,
   });
   String? text = '';
   String? ruby = '';
-  TextStyle? style;
-  TextStyle? rubyStyle;
-  GestureTapDownCallback? onTapDown;
-  GestureTapUpCallback? onTapUp;
-  GestureTapCallback? onTap;
-  GestureDragUpdateCallback? onPanUpdate;
-  GestureTapCancelCallback? onTapCancel;
+  bool? isUnderlined;
+  // TextStyle? style;
+  // TextStyle? rubyStyle;
+  // GestureTapDownCallback? onTapDown;
+  // GestureTapUpCallback? onTapUp;
+  // GestureTapCallback? onTap;
+  // GestureDragUpdateCallback? onPanUpdate;
+  // GestureTapCancelCallback? onTapCancel;
 
   int getLength() {
     return text!.length;

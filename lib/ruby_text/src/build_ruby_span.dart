@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 WidgetSpan buildRubySpan(
   String? text, {
   String? ruby,
+  bool? isUnderlined,
   required BuildContext context,
   TextStyle? style,
   TextStyle? rubyStyle,
@@ -59,6 +60,10 @@ WidgetSpan buildRubySpan(
       effectiveTextStyle =
           effectiveTextStyle.merge(TextStyle(letterSpacing: newLetterSpacing));
     }
+  }
+  if (isUnderlined!) {
+    effectiveTextStyle = effectiveTextStyle
+        .merge(TextStyle(decoration: TextDecoration.underline));
   }
   final texts = <Widget>[];
   if (ruby != null) {
