@@ -1,15 +1,10 @@
 import 'package:flutter/widgets.dart';
-import 'package:ruby_text/extended_text/extended_text.dart';
-import 'package:ruby_text/ruby_text/ruby_text.dart';
-import '../../../extended_text/extended_text_controls.dart';
+import 'package:mutation_text/ruby_text/ruby_text.dart';
 import '/../utils/string_extension.dart';
 
 class MutationText extends StatelessWidget {
-  const MutationText(
-    this.normalText,
-    this.furiganeText,
-    Key? key,
-  ) : super(key: key);
+  const MutationText(this.normalText, this.furiganeText, {Key? key})
+      : super(key: key);
   final String? normalText;
   final String? furiganeText;
 
@@ -20,11 +15,11 @@ class MutationText extends StatelessWidget {
 
   ///xử lý chuỗi:
   //cắt thành từng đoạn văn
-  Widget genderMutationText(String? normalText, String? furiganeText) {
+  Widget genderMutationText(String? normalText, String? furiganaText) {
     var normals = <String>[]; // đoạn văn bình thường
     var furiganas = <List<RubyTextData>>[]; // đoạn văn được rắc furigane
     List<Widget> listWidget = <Widget>[];
-    List<String> f = furiganeText!.split('\\n');
+    List<String> f = furiganaText!.split('\\n');
     for (var i = 0; i < f.length; i++) {
       furiganas.add(convertTextToRuby(f[i]));
     }
@@ -37,8 +32,8 @@ class MutationText extends StatelessWidget {
       RubyTextData data = RubyTextData(text: '');
       listWidget.add(RubyText('', [data]));
       return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: listWidget);
     } else {
       for (var i = 0; i < furiganas.length; i++) {

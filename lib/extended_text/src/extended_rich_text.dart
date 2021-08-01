@@ -1,9 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:ruby_text/extended_text/extended_text.dart';
-
+import 'package:mutation_text/extended_text/extended_text.dart';
 import '../../extended_text_library/src/render_object/extended_text_selection_render_object.dart';
 import 'text_overflow_widget.dart';
 

@@ -13,7 +13,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:ruby_text/extended_text_library/extended_text_library.dart';
+import 'package:mutation_text/extended_text_library/extended_text_library.dart';
 import 'text_overflow_widget.dart';
 part 'text_overflow_render_mixin.dart';
 

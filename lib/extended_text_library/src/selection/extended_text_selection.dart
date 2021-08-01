@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:ruby_text/extended_text_library/src/render_object/extended_text_selection_render_object.dart';
+import 'package:mutation_text/extended_text_library/extended_text_library.dart';
 
 /// Delegate interface for the [ExtendedTextSelectionGestureDetectorBuilder].
 ///

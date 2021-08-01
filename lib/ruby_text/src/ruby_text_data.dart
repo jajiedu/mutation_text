@@ -1,5 +1,3 @@
-import 'package:flutter/widgets.dart';
-
 class RubyTextData {
   RubyTextData({this.text, this.ruby, this.isUnderlined});
   RubyTextData.fromJson(Map<String, Object?> json)

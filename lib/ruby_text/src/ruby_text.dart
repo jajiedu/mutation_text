@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:ruby_text/extended_text/extended_text.dart';
-
+import 'package:mutation_text/extended_text/extended_text.dart';
 import '../../extended_text/extended_text_controls.dart';
 import 'build_ruby_span.dart';
 import 'ruby_text_data.dart';

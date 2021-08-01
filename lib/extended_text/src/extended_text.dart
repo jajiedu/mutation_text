@@ -3,9 +3,10 @@ import 'dart:ui' as ui show TextHeightBehavior, BoxWidthStyle, BoxHeightStyle;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:ruby_text/extended_text/extended_text.dart';
-import 'package:ruby_text/extended_text/src/extended_rich_text.dart';
-import 'package:ruby_text/extended_text_library/extended_text_library.dart';
+import 'package:mutation_text/extended_text/extended_text.dart';
+import 'package:mutation_text/extended_text_library/extended_text_library.dart';
+
+import 'extended_rich_text.dart';
 
 class ExtendedText extends StatelessWidget {
   /// Creates a text widget.

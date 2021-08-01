@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   mutation_text:
-    path: '../
+    path: '../'
 
 
   # The following adds the Cupertino Icons font to your application.

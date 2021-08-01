@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:ruby_text/extended_text_library/extended_text_library.dart';
+import 'package:mutation_text/extended_text_library/extended_text_library.dart';
 
 class BackgroundTextSpan extends SpecialTextSpan {
   BackgroundTextSpan({

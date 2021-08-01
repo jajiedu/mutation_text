@@ -6,8 +6,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:ruby_text/extended_text_library/extended_text_library.dart';
-
+import 'package:mutation_text/extended_text_library/extended_text_library.dart';
 import '../extended_render_paragraph.dart';
 import '../extended_rich_text.dart';
 import '../text_overflow_widget.dart';

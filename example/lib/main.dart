@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mutation_text/mutation_text/mutation_text.dart';
+
+import 'constant/constant.dart';
 
 void main() {
   runApp(MyApp());
@@ -68,7 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // in the middle of the parent.
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[],
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[MutationText(normalText, furiganaText)],
         ),
       ),
       floatingActionButton: FloatingActionButton(

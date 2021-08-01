@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ruby_text/extended_text/extended_text.dart';
+import 'package:mutation_text/extended_text/extended_text.dart';
 
 ///
 ///  create by zmtzawqlp on 2019/6/5
