@@ -1,4 +1,4 @@
-package com.example.ruby_text
+package com.example.example
 
 import io.flutter.embedding.android.FlutterActivity
 
