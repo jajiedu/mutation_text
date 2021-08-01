@@ -3,71 +3,59 @@ import 'package:mutation_text/ruby_text/ruby_text.dart';
 import '/../utils/string_extension.dart';
 
 class MutationText extends StatelessWidget {
-  const MutationText(this.normalText, this.furiganeText, {Key? key})
-      : super(key: key);
+  const MutationText(this.normalText, {this.furiganaText, this.furiganaMode});
+
   final String? normalText;
-  final String? furiganeText;
+  final String? furiganaText;
+  final bool? furiganaMode;
 
   @override
   Widget build(BuildContext context) {
-    return genderMutationText(normalText, furiganeText);
+    return genderMutationText(normalText,
+        furiganaText: furiganaText, furiganaMode: furiganaMode);
   }
 
   ///xử lý chuỗi:
   //cắt thành từng đoạn văn
-  Widget genderMutationText(String? normalText, String? furiganaText) {
+  Widget genderMutationText(String? normalText,
+      {String? furiganaText, bool? furiganaMode}) {
+    List<Widget> listWidget = <Widget>[];
     var normals = <String>[]; // đoạn văn bình thường
     var furiganas = <List<RubyTextData>>[]; // đoạn văn được rắc furigane
-    List<Widget> listWidget = <Widget>[];
-    List<String> f = furiganaText!.split('\\n');
-    for (var i = 0; i < f.length; i++) {
-      furiganas.add(convertTextToRuby(f[i]));
+
+    if (furiganaText != null) {
+      List<String> f = furiganaText.split('\\n');
+      for (var i = 0; i < f.length; i++) {
+        furiganas.add(convertTextToRuby(f[i]));
+      }
     }
+
     List<String> n = normalText!.split('\\n');
     for (var i = 0; i < n.length; i++) {
       normals.add(n[i]);
     }
-
-    if (normals == null || furiganas == null) {
-      RubyTextData data = RubyTextData(text: '');
-      listWidget.add(RubyText('', [data]));
-      return Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: listWidget);
-    } else {
+// trả về Container rỗng khi không có input
+    if (normals.length == 0 && furiganas.length == 0) {
+      listWidget.add(Container());
+    }
+// trả về text thông thường khi không có
+    else if (normals.length != 0 && furiganas.length == 0 ||
+        furiganaMode == false) {
+      for (var i = 0; i < normals.length; i++) {
+        listWidget.add(Text(normals[i]));
+      }
+    }
+    // muốn có furigane
+    else {
       for (var i = 0; i < furiganas.length; i++) {
         listWidget.add(RubyText(normals[i], furiganas[i]));
       }
-      return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: listWidget);
     }
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: listWidget);
   }
-
-  // /// gender view khi có ruby text
-  // Widget getTextRubyWidgets(
-  //     List<String>? texts, List<List<RubyTextData>>? questionFurigana) {
-  //   List<Widget> list = <Widget>[];
-
-  //   if (texts == null || questionFurigana == null) {
-  //     RubyTextData data = RubyTextData(text: '');
-  //     list.add(RubyText('', [data]));
-  //     return Column(
-  //         crossAxisAlignment: CrossAxisAlignment.start,
-  //         mainAxisAlignment: MainAxisAlignment.start,
-  //         children: list);
-  //   } else {
-  //     for (var i = 0; i < questionFurigana.length; i++) {
-  //       list.add(RubyText(texts[i], questionFurigana[i]));
-  //     }
-  //     return Column(
-  //         crossAxisAlignment: CrossAxisAlignment.start,
-  //         mainAxisAlignment: MainAxisAlignment.start,
-  //         children: list);
-  //   }
-  // }
 
   /// chuyển đổi sang sạng ruby text
   List<RubyTextData> convertTextToRuby(String text) {

@@ -72,7 +72,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[MutationText(normalText, furiganaText)],
+          children: <Widget>[
+            MutationText(
+              normalText,
+              furiganaMode: false,
+            )
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
