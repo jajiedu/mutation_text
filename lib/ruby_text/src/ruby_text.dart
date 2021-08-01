@@ -78,7 +78,7 @@ class RubyText extends StatelessWidget {
                 // rubyStyle: data.rubyStyle,
                 // onTapDown: data.onTapDown,
                 // onTapUp: data.onTapUp,
-                // onTapChildText: onTapChildText,
+                onTapChildText: onTapChildText,
                 // onTapCancel: data.onTapCancel,
                 onPanUpdate: (details) {},
                 onTap: () {},
