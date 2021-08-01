@@ -3,11 +3,17 @@ import 'package:mutation_text/ruby_text/ruby_text.dart';
 import '/../utils/string_extension.dart';
 
 class MutationText extends StatelessWidget {
-  const MutationText(this.normalText, {this.furiganaText, this.furiganaMode});
+  const MutationText(this.normalText,
+      {this.furiganaText,
+      this.furiganaMode,
+      this.onTextChanged,
+      this.onTapChildText});
 
   final String? normalText;
   final String? furiganaText;
   final bool? furiganaMode;
+  final Function(String, double)? onTextChanged;
+  final Function(String)? onTapChildText;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +54,12 @@ class MutationText extends StatelessWidget {
     // muốn có furigane
     else {
       for (var i = 0; i < furiganas.length; i++) {
-        listWidget.add(RubyText(normals[i], furiganas[i]));
+        listWidget.add(RubyText(
+          normals[i],
+          furiganas[i],
+          onTextChanged: onTextChanged,
+          onTapChildText: onTapChildText,
+        ));
       }
     }
     return Column(

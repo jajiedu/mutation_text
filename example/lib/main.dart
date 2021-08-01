@@ -75,7 +75,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             MutationText(
               normalText,
-              furiganaMode: false,
+              furiganaText: furiganaText,
+              onTextChanged: (text, dy) {
+                print(text);
+              },
+              onTapChildText: (text) {
+                print(text);
+              },
             )
           ],
         ),
